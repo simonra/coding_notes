@@ -1,6 +1,7 @@
-using System.Web;
-using System.Web.HttpContext;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Services;
+using System.Threading.Tasks;
 
 namespace CustomMiddleware
 {
@@ -24,7 +25,7 @@ namespace CustomMiddleware
             context.Response.OnStarting((state) =>
             {
                 // ToDo: Manipulate response status code based on value of _httpStatusCodeStateKeepingService.StatusCode
-                context.Response.StatusCode = HttpStatusCode.OK; // Everything is fine. Always.
+                context.Response.StatusCode = _httpStatusCodeStateKeepingService.StatusCode; // Everything is fine. Always.
                 return Task.CompletedTask;
             }, null);
 
