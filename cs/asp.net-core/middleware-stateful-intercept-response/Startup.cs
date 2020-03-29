@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using CustomMiddleware;
+using Services;
 
 namespace asp.net_core
 {
@@ -25,6 +27,7 @@ namespace asp.net_core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<HttpStatusCodeStateKeepingService>();
             services.AddControllers();
         }
 
@@ -41,6 +44,8 @@ namespace asp.net_core
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSetCustomHttpStatusCodeMiddleware();
 
             app.UseEndpoints(endpoints =>
             {
