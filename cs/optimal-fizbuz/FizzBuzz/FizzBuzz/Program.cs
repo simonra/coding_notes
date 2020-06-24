@@ -6,10 +6,9 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            var fb = new FizzBuzzLibrary();
             for (int i = 0; i < 36; i++)
             {
-                Console.WriteLine(fb.FizzBuzz(i));
+                Console.WriteLine(FizzBuzzLibrary.FizzBuzz(i));
             }
         }
     }

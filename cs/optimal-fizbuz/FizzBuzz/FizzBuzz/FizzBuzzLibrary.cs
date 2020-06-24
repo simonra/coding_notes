@@ -2,9 +2,9 @@
 
 namespace FizzBuzz
 {
-    public class FizzBuzzLibrary
+    public static class FizzBuzzLibrary
     {
-        public string FizzBuzz(int number)
+        public static string FizzBuzz(int number)
         {
             Func<Func<string, string>, Func<string, string>> fizz =
                 f =>
