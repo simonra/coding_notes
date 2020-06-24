@@ -1,7 +1,8 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FizzBuzz
 {
+    [TestClass]
     public class FizzBuzzTests
     {
         private int number;
@@ -11,7 +12,7 @@ namespace FizzBuzz
         private FizzBuzzTests When => this;
         private FizzBuzzTests Then => this;
 
-        [Test]
+        [TestMethod]
         public void FizzBuzz_of_number_divisible_by_3_but_not_5_should_return_Fizz()
         {
             Given.We_have_a_number_divisible_by_3_but_not_5();
@@ -19,7 +20,7 @@ namespace FizzBuzz
             Then.Result_is_Fizz();
         }
 
-        [Test]
+        [TestMethod]
         public void FizzBuzz_of_number_divisible_by_5_but_not_3_should_return_Buzz()
         {
             Given.We_have_a_number_divisible_by_5_but_not_3();
@@ -27,7 +28,7 @@ namespace FizzBuzz
             Then.Result_is_Buzz();
         }
 
-        [Test]
+        [TestMethod]
         public void FizzBuzz_of_number_divisible_by_both_3_and_5_should_return_FizzBuzz()
         {
             Given.We_have_a_number_divisible_by_3_and_5();
@@ -35,7 +36,7 @@ namespace FizzBuzz
             Then.Result_is_FizzBuzz();
         }
 
-        [Test]
+        [TestMethod]
         public void FizzBuzz_of_number_neither_divisible_by_3_nor_5_should_return_number()
         {
             Given.We_have_a_number_netiher_divisible_by_3_nor_5();
