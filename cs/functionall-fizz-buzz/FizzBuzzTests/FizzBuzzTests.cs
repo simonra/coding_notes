@@ -43,6 +43,38 @@ namespace FizzBuzz
             Then.Result_is_same_as_number();
         }
 
+        [Test]
+        public void FizzBuzz_of_3_should_return_Fizz()
+        {
+            Given.We_use_3_as_the_number();
+            When.We_do_FizzBuzz_of_number();
+            Then.Result_is_Fizz();
+        }
+
+        [Test]
+        public void FizzBuzz_of_4_should_return_4()
+        {
+            Given.We_use_4_as_the_number();
+            When.We_do_FizzBuzz_of_number();
+            Then.Result_is_same_as_number();
+        }
+
+        [Test]
+        public void FizzBuzz_of_5_should_return_Buzz()
+        {
+            Given.We_use_5_as_the_number();
+            When.We_do_FizzBuzz_of_number();
+            Then.Result_is_Buzz();
+        }
+
+        [Test]
+        public void FizzBuzz_of_15_should_return_FizzBuzz()
+        {
+            Given.We_use_15_as_the_number();
+            When.We_do_FizzBuzz_of_number();
+            Then.Result_is_FizzBuzz();
+        }
+
         private void We_have_a_number_divisible_by_3_but_not_5()
         {
             number = 2 * 3 * 4 * 6 * 7;
@@ -61,6 +93,26 @@ namespace FizzBuzz
         private void We_have_a_number_netiher_divisible_by_3_nor_5()
         {
             number = 2 * 4 * 7 * 8 * 11 * 13;
+        }
+
+        private void We_use_3_as_the_number()
+        {
+            number = 3;
+        }
+
+        private void We_use_4_as_the_number()
+        {
+            number = 4;
+        }
+
+        private void We_use_5_as_the_number()
+        {
+            number = 5;
+        }
+
+        private void We_use_15_as_the_number()
+        {
+            number = 15;
         }
 
         private void We_do_FizzBuzz_of_number()
