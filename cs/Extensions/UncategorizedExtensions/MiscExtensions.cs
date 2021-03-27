@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Uncategorized
+namespace UncategorizedExtensions
 {
     public static class MiscExtensions
     {

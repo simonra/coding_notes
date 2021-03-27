@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Uncategorized\Uncategorized.csproj" />
+    <ProjectReference Include="..\UncategorizedExtensions\UncategorizedExtensions.csproj" />
   </ItemGroup>
 
 </Project>
