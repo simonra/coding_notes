@@ -11,7 +11,7 @@ namespace Uncategorized
 
         public static void AddIfNotNull<T>(this ICollection<T> collection, T? value)
         {
-            if(value != null)
+            if (value != null)
             {
                 collection.Add(value);
             }
@@ -25,6 +25,28 @@ namespace Uncategorized
         public static bool IsFalse(this bool? value)
         {
             return value == false;
+        }
+
+        public static IEnumerable<T> WhereNotNull<T>(this IEnumerable<T?> items) where T : struct
+        {
+            foreach (var item in items)
+            {
+                if (item != null)
+                {
+                    yield return (T)item;
+                }
+            }
+        }
+
+        public static IEnumerable<T> WhereNotNull<T>(this IEnumerable<T?> items) where T : class
+        {
+            foreach (var item in items)
+            {
+                if (item != null)
+                {
+                    yield return item;
+                }
+            }
         }
     }
 }
